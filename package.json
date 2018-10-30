@@ -1,0 +1,56 @@
+{
+  "name": "egg-aliyun-sms",
+  "version": "1.0.0",
+  "description": "aliyun sms package",
+  "eggPlugin": {
+    "name": "aliyunSms"
+  },
+  "keywords": [
+    "egg",
+    "eggPlugin",
+    "egg-plugin"
+  ],
+  "dependencies": {
+    "@alicloud/sms-sdk": "^1.1.6"
+  },
+  "devDependencies": {
+    "autod": "^3.0.0",
+    "autod-egg": "^1.0.0",
+    "egg": "^2.0.0",
+    "egg-bin": "^4.3.0",
+    "egg-ci": "^1.8.0",
+    "egg-mock": "^3.13.0",
+    "eslint": "^4.11.0",
+    "eslint-config-egg": "^5.1.0",
+    "webstorm-disable-index": "^1.2.0"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "scripts": {
+    "test": "npm run lint -- --fix && egg-bin pkgfiles && npm run test-local",
+    "test-local": "egg-bin test",
+    "cov": "egg-bin cov",
+    "lint": "eslint .",
+    "ci": "egg-bin pkgfiles --check && npm run lint && npm run cov",
+    "pkgfiles": "egg-bin pkgfiles",
+    "autod": "autod"
+  },
+  "files": [
+    "app.js",
+    "config"
+  ],
+  "ci": {
+    "version": "8, 9"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xiaoemoxiw/egg-aliyun-sms.git"
+  },
+  "bugs": {
+    "url": "https://github.com/xiaoemoxiw/egg-aliyun-sms/issues"
+  },
+  "homepage": "https://github.com/xiaoemoxiw/egg-aliyun-sms#readme",
+  "author": "yuxuewen",
+  "license": "MIT"
+}
