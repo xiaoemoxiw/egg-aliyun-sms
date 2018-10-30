@@ -1,6 +1,6 @@
 {
-  "name": "egg-aliyun-sms",
-  "version": "1.0.0",
+  "name": "egg-aliyun-sms-sdk",
+  "version": "1.0.2",
   "description": "aliyun sms package",
   "eggPlugin": {
     "name": "aliyunSms"

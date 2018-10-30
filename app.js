@@ -5,15 +5,24 @@ const SMSClient = require('@alicloud/sms-sdk');
 
 module.exports = app => {
 
-  const { accessKeyId, secretAccessKey, smsApiEndpoint, baseApiEndpoint, regionId, mnsVpc } = app.config.aliyunApiGateway || {};
+  const { accessKeyId, secretAccessKey, smsApiEndpoint, baseApiEndpoint, regionId, mnsVpc } = app.config.aliyunSms || {};
 
-  // check key & secret
+  let options = {};
+
   assert(accessKeyId && secretAccessKey && smsApiEndpoint && baseApiEndpoint && regionId && mnsVpc,
-    '[egg-aliyun-sms] Must set `accessKeyId` and `secretAccessKey` and `smsApiEndpoint` and `baseApiEndpoint` and `regionId` and `mnsVpc` in aliyun-sms\'s config');
+    '[egg-aliyun-sms] must set `accessKeyId` and `secretAccessKey` and `smsApiEndpoint` and `baseApiEndpoint` and `regionId` and `mnsVpc` in config files.');
 
-  app.coreLogger.info('[egg-egg-aliyun-api-geteway] setup');
+  Object.assign(options,{accessKeyId, secretAccessKey});
 
+  if (mnsVpc && mnsVpc.vpc) {
+      assert(smsApiEndpoint && baseApiEndpoint && regionId,
+          'if you use vpc , [egg-aliyun-sms] must set `smsApiEndpoint` and `baseApiEndpoint` and `regionId` and `mnsVpc` in config files.');
 
-  app.smsClient = new SMSClient({ accessKeyId, secretAccessKey, smsApiEndpoint, baseApiEndpoint, regionId, mnsVpc });
+      Object.assign(options,{smsApiEndpoint, baseApiEndpoint, regionId});
+  }
+
+  app.coreLogger.info('[egg-aliyun-sms] begin');
+
+  app.smsClient = new SMSClient(options);
 
 };
