@@ -2289,6 +2289,13 @@ ee-first@1.1.1, ee-first@^1.1.1, ee-first@~1.1.1:
   resolved "https://registry.npmjs.org/ee-first/-/ee-first-1.1.1.tgz#590c61156b0ae2f4f0255732a158b266bc56b21d"
   integrity sha1-WQxhFWsK4vTwJVcyoViyZrxWsh0=
 
+egg-aliyun-sms-sdk@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.npmjs.org/egg-aliyun-sms-sdk/-/egg-aliyun-sms-sdk-1.0.3.tgz#2ecd6952c333d7c78b9605944a31361b07186a4e"
+  integrity sha512-0hFG2rWE4dVavvxP2+ao2wm4nArKMtFDX7o4nYO5V3IpHlApeD0ATvSo6XX/N9bt7hcXRLxUC52bLmc1/hAq4A==
+  dependencies:
+    "@alicloud/sms-sdk" "^1.1.6"
+
 egg-bin@^4.3.0:
   version "4.9.0"
   resolved "https://registry.npmjs.org/egg-bin/-/egg-bin-4.9.0.tgz#e6bc89c29bfda6ad7f80681ef92d9653c410692f"

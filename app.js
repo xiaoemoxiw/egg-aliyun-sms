@@ -9,8 +9,7 @@ module.exports = app => {
 
   let options = {};
 
-  assert(accessKeyId && secretAccessKey && smsApiEndpoint && baseApiEndpoint && regionId && mnsVpc,
-    '[egg-aliyun-sms] must set `accessKeyId` and `secretAccessKey` and `smsApiEndpoint` and `baseApiEndpoint` and `regionId` and `mnsVpc` in config files.');
+  assert(accessKeyId && secretAccessKey , '[egg-aliyun-sms] must set `accessKeyId` and `secretAccessKey` in config files.');
 
   Object.assign(options,{accessKeyId, secretAccessKey});
 
