@@ -1,6 +1,6 @@
 {
   "name": "egg-aliyun-sms-sdk",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "aliyun sms package",
   "eggPlugin": {
     "name": "aliyunSms"
@@ -37,8 +37,9 @@
     "autod": "autod"
   },
   "files": [
+    "config",
     "app.js",
-    "config"
+    "lib"
   ],
   "ci": {
     "version": "8, 9"
